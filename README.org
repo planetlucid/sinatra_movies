@@ -1,0 +1,17 @@
+* Save and Edit your favorite quotes!
+    Show errors to user
+    • GET /failure
+    Create a user account
+    • GET /signup
+    • POST /signup
+    Log in as a user
+    • GET /login
+    • POST /login
+    CRUD on Quote
+    • GET /quotes
+    • GET \/quotes/:id
+    • GET \/quotes/new
+    • POST /quotes
+    • GET \/quotes/:id/edit
+    • PATCH \/quotes/:id
+    • DELETE \/quotes/:id
