@@ -14,4 +14,13 @@
     • POST /quotes
     • GET \/quotes/:id/edit
     • PATCH \/quotes/:id
-    • DELETE \/quotes/:id
+    • DELETE \/quotes/:
+    
+
+
+    ####
+    git status
+    git pull
+    git add
+    git commit -m "commit message"
+    git push
