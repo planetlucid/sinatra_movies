@@ -1,0 +1,8 @@
+<h1>Error</h1>
+<% if @errors %>
+    <ul>
+	<% @errors.each do |error| %>
+	    <li><%= error %></li>
+	<% end %>
+    </ul>
+<% end %>
