@@ -1,0 +1,15 @@
+  
+<h1>All quotes</h1>
+
+<ul>
+    <% @quotes.each do |quote| %>
+	<li>
+	    <a href="/quotes/<%=quote.id %>/edit">
+		"<%= quote.body %>" - <%= quote.author %>
+	    </a>
+	</li>
+    <% end %>
+</ul>
+
+<a href="/quotes/new">new</a>
+<a href="/logout">logout</a>
