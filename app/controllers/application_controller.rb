@@ -26,10 +26,10 @@ class ApplicationController < Sinatra::Base
     post '/signup' do
         user = User.new(user_params)
         if user.save
-          redirect '/'
+            redirect '/'
         else
-          @errors = ["Signup failed"]
-          erb :failure
+            @errors = ["Signup failed"]
+            erb :failure
         end
     end
 
