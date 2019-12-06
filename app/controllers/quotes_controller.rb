@@ -1,19 +1,19 @@
 class QuotesController < ApplicationController
     get '/quotes' do
-        if logged_in?
-            @quotes = Quote.all
+        redirect_if_not_logged_in
+            @quotes = current_user.quotes 
             erb :index
-        else
-            redirect '/login'
-        end
+        # else
+        #     redirect '/login'
+        # end
     end
-  
 
     get '/quotes/new' do
         erb :new
     end
 
     post '/quotes' do
+        redirect_if_not_logged_in
         quote = Quote.new(quote_params)
         if quote.save
             redirect '/quotes'
@@ -34,13 +34,13 @@ class QuotesController < ApplicationController
     # end
     
     get '/quotes/:id/edit' do
-        # redirect_if_not_logged_in
+        redirect_if_not_logged_in
         set_quote
         erb :edit
     end
 
     patch '/quotes/:id' do
-        # redirect_if_not_logged_in
+        redirect_if_not_logged_in
         set_quote
         if @quote.update(quote_params)
             redirect '/quotes'
@@ -53,7 +53,7 @@ class QuotesController < ApplicationController
     private
 
     def quote_params
-        {author: params[:author], body: params[:body]}
+        { author: params[:author], body: params[:body], user: current_user}
     end
 
     def set_quote
