@@ -1,9 +1,13 @@
 class QuotesController < ApplicationController
-    
     get '/quotes' do
-        @quotes = Quote.all
-        erb :index
+        if logged_in?
+            @quotes = Quote.all
+            erb :index
+        else
+            redirect '/login'
+        end
     end
+  
 
     get '/quotes/new' do
         erb :new
