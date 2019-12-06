@@ -19,20 +19,44 @@ class QuotesController < ApplicationController
         end
     end 
 
+    # get '/quotes/:id/edit' do
+    #     @quote = Quote.find_by(id: params[:id])
+    #     if @quote
+    #         erb :edit
+    #     else
+    #         @errors = ["invalid quote id"]
+    #         erb :failure
+    #     end
+    # end
+    
     get '/quotes/:id/edit' do
-        @quote = Quote.find_by(id: params[:id])
-        if @quote
-            erb :edit
+        # redirect_if_not_logged_in
+        set_quote
+        erb :edit
+    end
+
+    patch '/quotes/:id' do
+        # redirect_if_not_logged_in
+        set_quote
+        if @quote.update(quote_params)
+            redirect '/quotes'
         else
-            @errors = ["invalid quote id"]
+            @errors = ['could not update']
             erb :failures
         end
     end
-    
+
     private
 
     def quote_params
         {author: params[:author], body: params[:body]}
+    end
 
+    def set_quote
+        @quote = Quote.find_by(id: params[:id])
+        unless @quote
+            @errors = ['invalid quote id']
+            redirect '/'
+        end
     end
 end
