@@ -1,5 +1,7 @@
+require 'byebug'
 class QuotesController < ApplicationController
     get '/quotes' do
+# byebug
         redirect_if_not_logged_in
             @quotes = current_user.quotes 
             erb :index
