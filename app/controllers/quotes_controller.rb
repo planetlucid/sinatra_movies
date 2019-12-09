@@ -3,7 +3,8 @@ class QuotesController < ApplicationController
     get '/quotes' do
 # byebug
         redirect_if_not_logged_in
-            @quotes = current_user.quotes 
+            @quotes = current_user.quotes
+            @current_user = current_user 
             erb :index
         # else
         #     redirect '/login'
@@ -58,6 +59,8 @@ class QuotesController < ApplicationController
         redirect '/quotes'
     end
 
+    #helper for how to authorize correct user
+    #model.user_id = current_user.user_id
 
     private 
 
