@@ -1,4 +1,11 @@
-<h1>edit</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+  </head>
+<h1>Edit Movie</h1>
 
 <form method="POST" action="/quotes/<%= @quote.id %>">
     <input type="hidden" name="_method" value="patch">
@@ -12,8 +19,15 @@
     </p>
     <p>
 	<input type="submit" value="create">
+    <form action="/quotes/<%= @quote.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="delete" />
+    <input type="submit" value="delete"/>
+    </form>
     </p>
+  
 </form>
 
 
 <a href="/quotes">back</a>
+
+</html>

@@ -1,6 +1,13 @@
-
-<h1>All quotes</h1>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
+  </head>
+  <html>
+<h1>All Movies</h1>
+<h3>Welcome, <%= @current_user %> </h3>
 <ul>
     <% @quotes.each do |quote| %>
 	<li>
@@ -13,3 +20,6 @@
 
 <a href="/quotes/new">new</a>
 <a href="/logout">logout</a>
+</html>
+
+

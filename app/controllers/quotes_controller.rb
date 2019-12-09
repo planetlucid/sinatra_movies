@@ -52,7 +52,14 @@ class QuotesController < ApplicationController
         end
     end
 
-    private
+    delete '/quotes/:id' do
+        set_quote
+        @quote.destroy
+        redirect '/quotes'
+    end
+
+
+    private 
 
     def quote_params
         { author: params[:author], body: params[:body], user: current_user}
