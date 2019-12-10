@@ -1,0 +1,17 @@
+body {
+    background: #e2e2e2;
+    margin: 40px;
+    background-image:url('/images/food.jpg');
+}
+
+h1,
+.h1 {
+  font-size: 36px;
+  color: #e2e2e2;
+}
+
+h3,
+.h3 {
+  font-size: 24px;
+  color: #e2e2e2;
+}

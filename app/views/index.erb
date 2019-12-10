@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
-    <style>body {background-image:url('/img/food.jpg');}</style>
+    <head>
+        <meta charset="UTF-8">
+        <title>title</title>
+        <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
+        <link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">  
     </head>
-<h1>Movie Dish</h1>
-<h3>Welcome, <%= @current_user.username %> </h3>
-<ul>
-    <% @quotes.each do |quote| %>
-	<li>
-	    <a href="/quotes/<%=quote.id %>/edit">
-		"<%= quote.body %>" - <%= quote.author %>
-	    </a>
-	</li>
-    <% end %>
-</ul>
+<body>
 
-<a href="/quotes/new">new</a>
-<a href="/logout">logout</a>
+    <h1>Movie Dish</h1>
+    <h3>Welcome, <%= @current_user.username %> </h3>
+    <ul>
+        <% @quotes.each do |quote| %>
+        <li>
+            <a href="/quotes/<%=quote.id %>/edit">
+            "<%= quote.body %>" - <%= quote.author %>
+            </a>
+        </li>
+        <% end %>
+    </ul>
+    <a href="/quotes/new">new</a>
+    <a href="/logout">logout</a>
+
+</body>
 </html>
-
-
