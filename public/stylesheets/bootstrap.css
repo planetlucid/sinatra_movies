@@ -11,7 +11,8 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  margin: 40px;
+  background-image:url('/img/food.jpg');
 }
 article,
 aside,
@@ -1079,6 +1080,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+  
 }
 input,
 button,
@@ -1255,7 +1257,7 @@ h6 .small,
 h1,
 .h1 {
   font-size: 36px;
-  color: red;
+  color: #2e2e2e;
 }
 h2,
 .h2 {

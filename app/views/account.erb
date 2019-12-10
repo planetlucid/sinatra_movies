@@ -5,10 +5,11 @@
     <title>title</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
+  <h1>Movie Dish</h1>
   <body id="page-top">
-    <% if Helpers.is_logged_in?(session) %>
-      <h1>Welcome <%= Helpers.current_user(session).username %></h1>
-      <h3>Your Balance: <%= Helpers.current_user(session).balance %></h3>
+    <% if @current_user = current_user  %>
+      <h3><%= @current_user.username %>'s Account</h3>
+      <h4>Your Movie Dishes:</h4>
     
       <h4><a href="/logout">Log Out</a></h4>
     <% end %>

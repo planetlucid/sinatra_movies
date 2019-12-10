@@ -44,6 +44,9 @@ class ApplicationController < Sinatra::Base
         redirect '/'
     end
 
+    get '/account' do
+        erb :account
+    end
 
     #helper for how to authorize correct user
     #model.user_id = current_user.user_id
