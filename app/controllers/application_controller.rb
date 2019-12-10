@@ -11,8 +11,8 @@ class ApplicationController < Sinatra::Base
     # end
 
     get '/' do
-        "<h1>Hello, World</h1>"
-        
+        "<h1>Hello, #{current_user} </h1>"
+        redirect '/quotes'
     end
 
     get '/failure' do
@@ -27,7 +27,8 @@ class ApplicationController < Sinatra::Base
     post '/signup' do
         user = User.new(user_params)
         if user.save
-            redirect '/'
+            session[:user_id] = user.id
+            redirect '/quotes'
         else
             @errors = ["Signup failed"]
             erb :failure
@@ -43,9 +44,17 @@ class ApplicationController < Sinatra::Base
         redirect '/'
     end
 
+
+    #helper for how to authorize correct user
+    #model.user_id = current_user.user_id
+
     helpers do
+        # def logged_in?
+        #     !!session[:user_id]
+        # end
+
         def logged_in?
-            !!session[:user_id]
+            !!current_user
         end
 
         def redirect_if_not_logged_in
@@ -54,8 +63,12 @@ class ApplicationController < Sinatra::Base
             end
         end
         
+        # def current_user
+        #     User.find(session[:user_id])
+        # end
+
         def current_user
-            User.find(session[:user_id])
+            @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
         end
     end
 

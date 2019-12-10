@@ -26,20 +26,20 @@ class QuotesController < ApplicationController
         end
     end 
 
-    # get '/quotes/:id/edit' do
-    #     @quote = Quote.find_by(id: params[:id])
-    #     if @quote
-    #         erb :edit
-    #     else
-    #         @errors = ["invalid quote id"]
-    #         erb :failure
-    #     end
-    # end
+  
     
     get '/quotes/:id/edit' do
         redirect_if_not_logged_in
         set_quote
-        erb :edit
+    
+        #abstract into helper methods so I dont havae to type it every time.
+        @quote = Quote.find_by_id(params[:id])
+        if @quote.user_id == current_user
+            erb :edit
+        else
+            "You're not the owner of this post."
+            redirect to '/quotes'
+        end
     end
 
     patch '/quotes/:id' do
