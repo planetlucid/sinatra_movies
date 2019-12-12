@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-    <link rel="stylesheet" href="public/stylesheets/bootstrap.css" type="text/css">  
-  </head>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+<link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
+<link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">  
+</head>
+<body>
   <h1>Movie Dish</h1>
-<h3>Add Movie and Meal</h3>
-<form method="POST" action="/quotes">
+  <h3>Add Movie and Meal</h3>
+  <form method="POST" action="/quotes">
     <p>
-	<label for="body">Movie:</label>
+	<label for="body" class="label" >Movie:</label>
 	<input type="text" name="body">
     </p>
     <p>
-	<label for="author">Meal:</label>
+	<label for="author" class="label" >Meal:</label>
 	<input type="text" name="author">
     </p>
     <p>
 	<input type="submit" value="create">
     </p>
-</form>
+  </form>
+</body>
+
+
 </html>
