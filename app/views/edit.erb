@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
-    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
     <link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap" rel="stylesheet">
       </head>  
@@ -18,29 +18,38 @@
 </div>
 
 <body>
-<h3>Edit Film</h3>
-  <form method="POST" action="/quotes/<%= @quote.id %>">
-    <input type="hidden" name="_method" value="patch">
-    <p>
-    <label for="body" class="list_item">Movie:</label>
-    <input type="text" name="body" value="<%= @quote.body %>">
-    </p>
-    <p>
-    <label for="author" class="list_item">Meal:</label>
-    <input type="text" name="author" value="<%= @quote.author %>">
-    </p>
-    <p>
-    <input type="submit" value="Update">
-    </form>
-    <form action="/quotes/<%= @quote.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="delete" class="btn btn-5" />
-    <input type="submit" value="delete" class="btn btn-5"/>
-    </p>
-  
+
+<div class = "content">
+      <div class = "action">
+      <h3>Edit Film</h3>
+      <br>
+    <form method="POST" action="/quotes/<%= @quote.id %>">
+      <input type="hidden" name="_method" value="patch">
+      <div>
+      <label for="body" class="list_item">Movie:</label>
+      <input type="text" name="body" value="<%= @quote.body %>">
+      </div>
+      
+      <div>
+      <label for="author" class="list_item">Meal:</label>
+      <input type="text" name="author" value="<%= @quote.author %>">
+      </div>
+      <br>
+      <input type="submit" value="Update" class="btn btn-5">
+      </form>
+
+    <div>
+      <form action="/quotes/<%= @quote.id %>" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="delete" class="btn btn-5" />
+      <input type="submit" value="delete" class="btn btn-5"/>
+      </form>
+    </div>
+    <a href="/quotes" class="btn btn-5">Back</a>
+  </div>
     
   
+
 </body>
 
-<a href="/quotes" class="btn btn-5">back</a>
 
 </html>

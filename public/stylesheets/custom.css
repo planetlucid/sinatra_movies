@@ -27,6 +27,12 @@ h3,
   outline-offset: 0px;
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100px;
+  text-align: center;
+  text-transform: capitalize;
+  
 } 
 
 .btn:hover {
@@ -110,14 +116,20 @@ div.container a
 div.content {
   background: #1d19192a;
   padding: 10%;
+  margin: 0 auto;
 
 }
 
 div.action {
-  width: 200px
-  background-color: red;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .item {
   color: #e2e2e2;
+}
+
+a:hover {
+  color: aqua;
+  text-decoration: none;
 }
