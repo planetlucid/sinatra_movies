@@ -2,26 +2,41 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>title</title>
+<title>Create New</title>
 <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
-<link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">  
+#<link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap" rel="stylesheet">
+      </head>  
 </head>
+<h1>Movie Dish</h1>
+<div class="container purple topBotomBordersIn">
+    <a>QUOTES</a>
+    <a>CREATE</a>
+    <a>ACCOUNT</a>
+    <a>SIGN UP</a>
+    <a>SIGN IN</a>
+</div>
 <body>
-  <h1>Movie Dish</h1>
+<div class = "content">
   <h3>Add Movie and Meal</h3>
+  <br>
   <form method="POST" action="/quotes">
     <p>
-	<label for="body" class="label" >Movie:</label>
+	<label for="body" class="list_item" >Movie:</label>
 	<input type="text" name="body">
     </p>
     <p>
-	<label for="author" class="label" >Meal:</label>
+	<label for="author" class="list_item" >Meal:</label>
 	<input type="text" name="author">
     </p>
     <p>
-	<input type="submit" value="create">
+    <br>
     </p>
+  
+  <input type="submit" value="Create" class="btn btn-5">
+  <a href="/logout" class="btn btn-5">Log Out</a>
   </form>
+  </div>
 </body>
 
 

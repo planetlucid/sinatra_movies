@@ -2,17 +2,31 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Error</title>
     <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
-  </head>
+    <link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap" rel="stylesheet">
+      </head>  
+    </head>
   <html>
   <h1>Movie Dish</h1>
-  <h3>Error</h3>
-<% if @errors %>
-    <ul>
-	<% @errors.each do |error| %>
-	    <li><%= error %></li>
-	<% end %>
-    </ul>
-<% end %>
+  <div class="container purple topBotomBordersIn">
+    <a>QUOTES</a>
+    <a>CREATE</a>
+    <a>ACCOUNT</a>
+    <a>SIGN UP</a>
+    <a>SIGN IN</a>
+</div>
+  <body>
+  <div class = "content">
+      <h3>Error</h3>
+      <% if @errors %>
+      <ul>
+      <% @errors.each do |error| %>
+      <li><%= error %></li>
+      <% end %>
+      </ul>
+      <% end %>
+      </div>
+  </body>
 </html>

@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <title>title</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
-  </head>
+    <link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap" rel="stylesheet">
+      </head>  
+    </head>
 <h1>Edit Film</h1>
-
-<form method="POST" action="/quotes/<%= @quote.id %>">
+<h1>Movie Dish</h1>
+<div class="container purple topBotomBordersIn">
+  <a>QUOTES</a>
+  <a>CREATE</a>
+  <a>ACCOUNT</a>
+  <a>SIGN UP</a>
+  <a>SIGN IN</a>
+</div>
+<h1>Movie Dish</h1>
+<div class="container purple topBotomBordersIn">
+    <a>QUOTES</a>
+    <a>CREATE</a>
+    <a>ACCOUNT</a>
+    <a>SIGN UP</a>
+    <a>SIGN IN</a>
+</div>
+<body>
+  <form method="POST" action="/quotes/<%= @quote.id %>">
     <input type="hidden" name="_method" value="patch">
     <p>
 	<label for="body">Body:</label>
@@ -24,10 +43,9 @@
     <input type="submit" value="delete"/>
     </form>
     </p>
-  
-</form>
+  </form>
+</body>
 
-
-<a href="/quotes">back</a>
+<a href="/quotes" class="btn btn-5">back</a>
 
 </html>

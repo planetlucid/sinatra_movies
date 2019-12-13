@@ -2,16 +2,28 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Account</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
-  </head>
+    <link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap" rel="stylesheet">
+      </head>  
+    </head>
   <h1>Movie Dish</h1>
+  <div class="container purple topBotomBordersIn">
+    <a>QUOTES</a>
+    <a>CREATE</a>
+    <a>ACCOUNT</a>
+    <a>SIGN UP</a>
+    <a>SIGN IN</a>
+  </div>
   <body id="page-top">
+  <div class = "content">
     <% if @current_user = current_user  %>
-      <h3><%= @current_user.username %>'s Account</h3>
-      <h4>Your Movie Dishes:</h4>
-    
-      <h4><a href="/logout">Log Out</a></h4>
+      <h3><%= @current_user.username %> here's your Account:</h3>
+      <h4 class= "list_item">Your Movie Dishes:</h4>
+    <br>
+      <h4><a href="/logout" class="btn btn-5">Log Out</a></h4>
     <% end %>
+  </div>
   </body>
 </html>

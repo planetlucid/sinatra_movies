@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
-    <link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">  
-    </head>
+    <head>
+      <meta charset="UTF-8">
+      <title>Index Quotes</title>
+      <link rel="stylesheet" href="/stylesheets/bootstrap.css" type="text/css">  
+      <link rel="stylesheet" href="/stylesheets/custom.css" type="text/css">  
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap" rel="stylesheet">
+      </head>
+    <h1>Movie Dish</h1>
+    <div class="container purple topBotomBordersIn">
+      <a>QUOTES</a>
+      <a>CREATE</a>
+      <a>ACCOUNT</a>
+      <a>SIGN UP</a>
+      <a>SIGN IN</a>
+    </div>
     <body>
-<h1>Movie Dish</h1>
-<h3>Welcome, <%= @current_user.username %> </h3>
-<ul>
-    <% @quotes.each do |quote| %>
-	<li>
-	  <a href="/quotes/<%=quote.id %>/edit">
-		"<%= quote.body %>" - <%= quote.author %>
-	  </a>
-	</li>
-    <% end %>
-</ul>
-<a href="/quotes/new" class="btn btn-5">create</a>
-<a href="/logout" class="btn btn-5">logout</a>
-</body>
+    <div class = "content">
+      <div class = "action">
+        <h3>Hey <%= @current_user.username %>, here's what you added: </h3>
+        <br>
+        <ul>
+            <% @quotes.each_with_index do |quote| %>
+          <li>
+            <a href="/quotes/<%=quote.id %>/edit" class="list_item">
+            "<%= quote.body %>" - <%= quote.author %>
+            </a>
+          </li>
+            <% end %>
+        </ul>
+        <br>
+        <a href="/quotes/new" class="btn btn-5">Create</a>
+        <a href="/logout" class="btn btn-5">Sign Out</a>
+      </div>
+    </div>
+    </body>
 </html>
 
 
