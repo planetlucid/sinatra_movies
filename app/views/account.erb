@@ -10,20 +10,23 @@
     </head>
   <h1>Movie Dish</h1>
   <div class="container purple topBotomBordersIn">
-      <a href="/quotes">QUOTES</a>
-      <a href="/quotes/new">CREATE</a>
-      <a href="/account">ACCOUNT</a>
-      <a href="/signup">SIGN UP</a>
-      <a href="/login">SIGN IN</a>
+    <a href="/quotes">QUOTES</a>
+    <a href="/quotes/new">CREATE</a>
+    <a href="/account">ACCOUNT</a>
+    <a href="/signup">SIGN UP</a>
+    <a href="/login">SIGN IN</a>
   </div>
-  <body id="page-top">
+
   <div class = "content">
-    <% if @current_user = current_user  %>
-      <h3><%= @current_user.username %> here's your Account:</h3>
-      <h4 class= "list_item">Your Movie Dishes:</h4>
-    <br>
-      <h4><a href="/logout" class="btn btn-5">Log Out</a></h4>
-    <% end %>
-  </div>
+      <div class = "action">
+    <body id="page-top">
+     <% if @current_user = current_user  %>
+        <h3><%= @current_user.username %> here's your Account:</h3>
+        <h4 class= "list_item">Your Movie Dishes:</h4>
+      <br>
+        <h4><a href="/logout" class="btn btn-5">Log Out</a></h4>
+      <% end %>
+    </div>
+</div>
   </body>
 </html>
