@@ -11,19 +11,20 @@
   <html>
   <h1>Movie Dish</h1>
   <div class="container purple topBotomBordersIn">
-    <a>QUOTES</a>
-    <a>CREATE</a>
-    <a>ACCOUNT</a>
-    <a>SIGN UP</a>
-    <a>SIGN IN</a>
-</div>
+      <a href="/quotes">QUOTES</a>
+      <a href="/quotes/new">CREATE</a>
+      <a href="/account">ACCOUNT</a>
+      <a href="/signup">SIGN UP</a>
+      <a href="/login">SIGN IN</a>
+  </div>
   <body>
   <div class = "content">
       <h3>Error</h3>
       <% if @errors %>
-      <ul>
+      <ul class = "item">
       <% @errors.each do |error| %>
-      <li><%= error %></li>
+    
+        <li><%= error %></li>
       <% end %>
       </ul>
       <% end %>

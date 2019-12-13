@@ -3,8 +3,7 @@ class QuotesController < ApplicationController
     get '/quotes' do
 # byebug
         redirect_if_not_logged_in
-            @quotes = current_user.quotes
-            @current_user = current_user 
+            @quotes = current_user.quotes 
             erb :index
         # else
         #     redirect '/login'
@@ -26,20 +25,20 @@ class QuotesController < ApplicationController
         end
     end 
 
-  
+    # get '/quotes/:id/edit' do
+    #     @quote = Quote.find_by(id: params[:id])
+    #     if @quote
+    #         erb :edit
+    #     else
+    #         @errors = ["invalid quote id"]
+    #         erb :failure
+    #     end
+    # end
     
     get '/quotes/:id/edit' do
         redirect_if_not_logged_in
         set_quote
-    
-        #abstract into helper methods so I dont havae to type it every time.
-        @quote = Quote.find_by_id(params[:id])
-        if @quote.user_id == current_user
-            erb :edit
-        else
-            "You're not the owner of this post."
-            redirect to '/quotes'
-        end
+        erb :edit
     end
 
     patch '/quotes/:id' do
@@ -49,7 +48,7 @@ class QuotesController < ApplicationController
             redirect '/quotes'
         else
             @errors = ['could not update']
-            erb :failures
+            erb :failure
         end
     end
 
@@ -61,8 +60,8 @@ class QuotesController < ApplicationController
 
     #helper for how to authorize correct user
     #model.user_id = current_user.user_id
-
-    private 
+    
+    private
 
     def quote_params
         { author: params[:author], body: params[:body], user: current_user}

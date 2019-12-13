@@ -8,42 +8,37 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap" rel="stylesheet">
       </head>  
     </head>
-<h1>Edit Film</h1>
 <h1>Movie Dish</h1>
 <div class="container purple topBotomBordersIn">
-  <a>QUOTES</a>
-  <a>CREATE</a>
-  <a>ACCOUNT</a>
-  <a>SIGN UP</a>
-  <a>SIGN IN</a>
+    <a href="/quotes">QUOTES</a>
+    <a href="/quotes/new">CREATE</a>
+    <a href="/account">ACCOUNT</a>
+    <a href="/signup">SIGN UP</a>
+    <a href="/login">SIGN IN</a>
 </div>
-<h1>Movie Dish</h1>
-<div class="container purple topBotomBordersIn">
-    <a>QUOTES</a>
-    <a>CREATE</a>
-    <a>ACCOUNT</a>
-    <a>SIGN UP</a>
-    <a>SIGN IN</a>
-</div>
+
 <body>
+<h3>Edit Film</h3>
   <form method="POST" action="/quotes/<%= @quote.id %>">
     <input type="hidden" name="_method" value="patch">
     <p>
-	<label for="body">Body:</label>
-	<input type="text" name="body" value="<%= @quote.body %>">
+    <label for="body" class="list_item">Movie:</label>
+    <input type="text" name="body" value="<%= @quote.body %>">
     </p>
     <p>
-	<label for="author">Author:</label>
-	<input type="text" name="author" value="<%= @quote.author %>">
+    <label for="author" class="list_item">Meal:</label>
+    <input type="text" name="author" value="<%= @quote.author %>">
     </p>
     <p>
-	<input type="submit" value="create">
-    <form action="/quotes/<%= @quote.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="delete" />
-    <input type="submit" value="delete"/>
+    <input type="submit" value="Update">
     </form>
+    <form action="/quotes/<%= @quote.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="delete" class="btn btn-5" />
+    <input type="submit" value="delete" class="btn btn-5"/>
     </p>
-  </form>
+  
+    
+  
 </body>
 
 <a href="/quotes" class="btn btn-5">back</a>
